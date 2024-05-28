@@ -2,7 +2,7 @@ package com.neosoft.interviewback.service;
 
 import org.springframework.stereotype.Service;
 
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.joining;
 
 @Service
 public class NeoSoFtService {
@@ -31,7 +31,7 @@ public class NeoSoFtService {
                     case '7' -> FT;
                     default -> "";
                 })
-                .collect(Collectors.joining());
+                .collect(joining());
     }
 
     private String replaceWhenDivisible(int inputNumber, int divisor, String replacement) {

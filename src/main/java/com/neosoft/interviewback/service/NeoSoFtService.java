@@ -2,7 +2,7 @@ package com.neosoft.interviewback.service;
 
 import org.springframework.stereotype.Service;
 
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 @Service
 public class NeoSoFtService {
@@ -16,16 +16,22 @@ public class NeoSoFtService {
 
         result.append(replaceWhenDivisible(inputNumber, 3, NEO));
         result.append(replaceWhenDivisible(inputNumber, 5, SO));
+        result.append(replaceWhenContains(inputNumber));
 
-        var content = String.valueOf(inputNumber).split("");
-        Stream.of(content).forEach(c -> result.append(switch (c) {
-                    case "3" -> NEO;
-                    case "5" -> SO;
-                    case "7" -> FT;
+        return result.isEmpty() ? String.valueOf(inputNumber) : result.toString();
+    }
+
+    private String replaceWhenContains(int inputNumber) {
+        return String.valueOf(inputNumber)
+                .chars()
+                .mapToObj(c -> (char) c)
+                .map(c -> switch (c) {
+                    case '3' -> NEO;
+                    case '5' -> SO;
+                    case '7' -> FT;
                     default -> "";
                 })
-        );
-        return result.isEmpty() ? String.valueOf(inputNumber) : result.toString();
+                .collect(Collectors.joining());
     }
 
     private String replaceWhenDivisible(int inputNumber, int divisor, String replacement) {

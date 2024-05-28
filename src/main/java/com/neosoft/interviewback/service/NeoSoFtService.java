@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import static com.neosoft.interviewback.service.rules.NoopRule.keepAsIs;
-import static com.neosoft.interviewback.service.rules.Rule.NEO;
-import static com.neosoft.interviewback.service.rules.Rule.SO;
 import static java.util.stream.Collectors.joining;
 import static org.apache.logging.log4j.util.Strings.isEmpty;
 
@@ -15,9 +13,9 @@ import static org.apache.logging.log4j.util.Strings.isEmpty;
 public class NeoSoFtService {
 
     List<Rule> rules = List.of(
-            new DividableRule(3, NEO),
-            new DividableRule(5, SO),
-            new ContainsRule()
+            new DividableByThreeRule(),
+            new DividableByFiveRule(),
+            new ContainsThreeFiveSevenRule()
     );
 
     public String convertNumber(int inputNumber) {

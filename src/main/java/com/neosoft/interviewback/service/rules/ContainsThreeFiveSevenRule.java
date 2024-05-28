@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
 
-public class ContainsRule implements Rule {
+public class ContainsThreeFiveSevenRule implements Rule {
 
     @Override
     public String applyOn(int inputNumber) {

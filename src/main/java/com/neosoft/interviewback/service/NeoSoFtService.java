@@ -14,8 +14,8 @@ public class NeoSoFtService {
     public String convertNumber(int inputNumber) {
         var result = new StringBuilder();
 
-        result.append(replaceWhenDivisible(inputNumber, 3, NEO));
-        result.append(replaceWhenDivisible(inputNumber, 5, SO));
+        result.append(replaceWhenDividable(inputNumber, 3, NEO));
+        result.append(replaceWhenDividable(inputNumber, 5, SO));
         result.append(replaceWhenContains(inputNumber));
 
         return result.isEmpty() ? String.valueOf(inputNumber) : result.toString();
@@ -34,7 +34,7 @@ public class NeoSoFtService {
                 .collect(joining());
     }
 
-    private String replaceWhenDivisible(int inputNumber, int divisor, String replacement) {
+    private String replaceWhenDividable(int inputNumber, int divisor, String replacement) {
         return (inputNumber % divisor == 0) ? replacement : "";
     }
 }

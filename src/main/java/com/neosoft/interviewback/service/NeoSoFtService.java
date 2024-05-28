@@ -7,9 +7,9 @@ import static java.util.stream.Collectors.joining;
 @Service
 public class NeoSoFtService {
 
-    public static final String NEO = "Neo";
-    public static final String SO = "So";
-    public static final String FT = "Ft";
+    private static final String NEO = "Neo";
+    private static final String SO = "So";
+    private static final String FT = "Ft";
 
     public String convertNumber(int inputNumber) {
         var result = new StringBuilder();

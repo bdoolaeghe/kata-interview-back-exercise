@@ -1,6 +1,6 @@
 package com.neosoft.interviewback.service.rules;
 
-public class DivisibleByThreeRule implements Rule {
+public class DividableByThreeRule implements Rule {
 
     @Override
     public String applyOn(int input) {

@@ -1,6 +1,6 @@
 package com.neosoft.interviewback.service.rules;
 
-public class DivisibleByFiveRule implements Rule {
+public class DividableByFiveRule implements Rule {
 
     @Override
     public String applyOn(int input) {

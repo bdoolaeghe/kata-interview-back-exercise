@@ -12,9 +12,9 @@ public class ContainsRule implements Rule {
         return Stream.of(figures)
                 .map(Integer::parseInt)
                 .map(i -> switch (i) {
-                    case 3 -> "Neo";
-                    case 5 -> "So";
-                    case 7 -> "Ft";
+                    case 3 -> NEO;
+                    case 5 -> SO;
+                    case 7 -> FT;
                     default -> "";
                 })
                 .collect(joining());

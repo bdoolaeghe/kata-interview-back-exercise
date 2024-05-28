@@ -18,15 +18,12 @@ public class NeoSoFtService {
         result.append(replaceWhenDivisible(inputNumber, 5, SO));
 
         var content = String.valueOf(inputNumber).split("");
-        Stream.of(content).forEach(c -> {
-                    var mapping = switch (c) {
-                        case "3" -> NEO;
-                        case "5" -> SO;
-                        case "7" -> FT;
-                        default -> "";
-                    };
-                    result.append(mapping);
-                }
+        Stream.of(content).forEach(c -> result.append(switch (c) {
+                    case "3" -> NEO;
+                    case "5" -> SO;
+                    case "7" -> FT;
+                    default -> "";
+                })
         );
         return result.isEmpty() ? String.valueOf(inputNumber) : result.toString();
     }

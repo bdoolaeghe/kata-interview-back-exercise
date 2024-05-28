@@ -1,6 +1,9 @@
 package com.neosoft.interviewback.service;
 
-import com.neosoft.interviewback.service.rules.*;
+import com.neosoft.interviewback.service.rules.ContainsThreeFiveSevenRule;
+import com.neosoft.interviewback.service.rules.DividableByFiveRule;
+import com.neosoft.interviewback.service.rules.DividableByThreeRule;
+import com.neosoft.interviewback.service.rules.Rule;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

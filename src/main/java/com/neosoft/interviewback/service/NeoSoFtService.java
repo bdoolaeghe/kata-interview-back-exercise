@@ -18,7 +18,13 @@ public class NeoSoFtService {
         result.append(replaceWhenDividable(inputNumber, 5, SO));
         result.append(replaceWhenContains(inputNumber));
 
-        return result.isEmpty() ? String.valueOf(inputNumber) : result.toString();
+        return result.isEmpty()
+                ? keepAsIs(inputNumber)
+                : result.toString();
+    }
+
+    private String keepAsIs(int inputNumber) {
+        return String.valueOf(inputNumber);
     }
 
     private String replaceWhenContains(int inputNumber) {

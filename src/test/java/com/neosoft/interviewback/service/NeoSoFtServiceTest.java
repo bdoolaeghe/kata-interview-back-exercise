@@ -21,7 +21,8 @@ class NeoSoFtServiceTest {
         "53,SoNeo",
         "33,NeoNeoNeo",
         "27,NeoFt",
-        "15,NeoSoSo"
+        "15,NeoSoSo",
+        "357075357,NeoNeoSoFtFtSoNeoSoFt"
     })
     void should_validate_test_harness(String input,String expectedOutput) {
         assertThat(neoSoFtService.convertNumber(parseInt(input))).isEqualTo(expectedOutput);
